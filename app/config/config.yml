@@ -37,6 +37,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        admin_skin: "%admin_skin%"
 
 # Doctrine Configuration
 doctrine:
@@ -67,6 +69,16 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: UserBundle\Entity\User
+    group:
+        group_class: UserBundle\Entity\Group
+    registration:
+        form:
+            type: UserBundle\Form\RegistrationType
 
 # Assetic Configuration
 assetic:

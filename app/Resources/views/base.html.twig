@@ -5,6 +5,7 @@
         {% block stylesheets %}
             {% stylesheets '@bootstrap_css' %}
                 <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+                <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('bundles/app/css/style.css') }}"/>
             {% endstylesheets %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -14,6 +15,7 @@
         {% block javascripts %}
             {% javascripts '@jquery' '@bootstrap_js' %}
                 <script type="text/javascript" src="{{ asset_url }}"></script>
+                <script type="text/javascript" src="{{ asset('bundles/app/js/login.js') }}"></script>
             {% endjavascripts %}
         {% endblock %}
     </body>

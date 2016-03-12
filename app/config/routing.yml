@@ -1,3 +1,22 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+app_homepage:
+    defaults: { _controller: AppBundle:Default:index }
+    path: /{_locale}/
+    requirements:
+        _locale: %locales%
+
+home:
+    defaults: { _controller: AppBundle:Default:student }
+    path: /{_locale}/home
+    requirements:
+        _locale: %locales%
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix: /{_locale}/
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale: %locales%
+
+fos_user_group:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /{_locale}/group

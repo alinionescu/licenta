@@ -1,0 +1,51 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block main %}
+    {{ parent() }}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <div class="account-wall">.
+                    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'form-signin'}}) }}
+                    <h2 class="form-signin-heading text-center">Register Licenta</h2>
+                    <div class="form-group">
+                        {{ form_row(form.name) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.username) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.email) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.plainPassword) }}
+                    </div>
+                    {{ form_end(form) }}
+
+                    {#<div>#}
+                        {#<input type="submit" value="Register" />#}
+                    {#</div>#}
+                    {#<form method="post" action='{{ path('fos_user_registration_register') }}' name="login_form">#}
+                        {#<div class="form-group">#}
+                            {#<label for="inputEmail" class="control-label">UserName:</label>#}
+                            {#<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>#}
+                        {#</div>#}
+                        {#<div class="form-group">#}
+                            {#<label for="inputPassword" class="control-label">Password:</label>#}
+                            {#<input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""></input>#}
+                        {#</div>#}
+                        {#<div class="form-group">#}
+                            {#<div class="checkbox">#}
+                                {#<label>#}
+                                    {#<input type="checkbox" value="remember-me"> Remember me#}
+                                {#</label>#}
+                                {#<a class="pull-right" href="#">Forgot Password?</a>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<input type="submit" id="_submit" name="_submit" value="Register" class="btn btn-lg btn-primary btn-block" />#}
+                    {#</form>#}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
